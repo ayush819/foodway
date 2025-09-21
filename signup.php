@@ -9,6 +9,7 @@ if(isset($_POST['sign']))
     $email=$_POST['email'];
     $password=$_POST['password'];
     $gender=$_POST['gender'];
+    $gender=$_POST['age'];
 
     $pass=password_hash($password,PASSWORD_DEFAULT);
     $sql="select * from login where email='$email'" ;
@@ -20,7 +21,7 @@ if(isset($_POST['sign']))
     }
     else{
     
-    $query="insert into login(name,email,password,gender) values('$username','$email','$pass','$gender')";
+    $query="insert into login(name,email,password,gender,age) values('$username','$email','$pass','$gender','$age')";
     $query_run= mysqli_query($connection, $query);
     if($query_run)
     {
